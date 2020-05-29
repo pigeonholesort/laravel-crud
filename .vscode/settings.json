@@ -1,0 +1,27 @@
+{
+    "beautify.language": {
+        "js": {
+            "type": [
+                "javascript",
+                "json",
+                "jsonc"
+            ],
+            "filename": [
+                ".jshintrc",
+                ".jsbeautifyrc"
+            ]
+        },
+        "css": [
+            "css",
+            "scss"
+        ],
+        "html": [
+            "htm",
+            "html",
+            "blade"
+        ]
+    },
+    "files.associations": {
+        "*.blade.php": "html"
+    },
+}
