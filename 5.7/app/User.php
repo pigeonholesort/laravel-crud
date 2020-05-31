@@ -54,4 +54,15 @@ class User extends Authenticatable
     {
         $this->notify(new CustomPasswordReset($token));
     }
+
+    /**
+     * 現在のユーザー、または引数で渡されたIDが管理者かどうかを返す
+     *
+     * @param  number  $id  User ID
+     * @return boolean
+     */
+    public function isAdmin($id = null) {
+        $id = ($id) ? $id : $this->id;
+        return $id == config('admin_id');
+    }
 }
