@@ -49,7 +49,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = $request->password;
         $user->save();
-        return redirect('users/'.$user->id);
+        return redirect('users/' . $user->id)->with('my_status', __('Created new user.'));
     }
 
     /**
@@ -92,7 +92,7 @@ class UserController extends Controller
         ]);
         $user->name = $request->name;
         $user->save();
-        return redirect('users/'.$user->id);
+        return redirect('users/' . $user->id)->with('my_status', __('Updated a user.'));
     }
 
     /**
@@ -105,6 +105,6 @@ class UserController extends Controller
     {
         $this->authorize('edit', $user);
         $user->delete();
-        return redirect('users');
+        return redirect('users')->with('my_status', __('Deleted a user.'));
     }
 }
