@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\StorePost;
 
 use Illuminate\Http\Request;
 use App\Post;
@@ -35,7 +36,7 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePost $request)
     {
         $post = new Post;
         $post->title = $request->title;
@@ -75,7 +76,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(StorePost $request, Post $post)
     {
         $this->authorize('edit', $post);
         $post->title = $request->title;
