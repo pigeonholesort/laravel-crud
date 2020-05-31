@@ -36,4 +36,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function posts() // 複数形
+    {
+        // 記事を新しい順で取得する
+        return $this->hasMany('App\Post')->latest();
+    }
 }

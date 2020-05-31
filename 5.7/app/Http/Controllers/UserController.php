@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::paginate(5);
         return view('users.index', ['users' => $users]);
     }
 
@@ -52,6 +52,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
+        $user->posts = $user->posts()->paginate(5);
         return view('users.show', ['user' => $user]);
     }
 
