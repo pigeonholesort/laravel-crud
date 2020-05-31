@@ -52,7 +52,6 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        var_dump($post);exit;
         return view('posts.show', ['post' => $post]);
     }
 
