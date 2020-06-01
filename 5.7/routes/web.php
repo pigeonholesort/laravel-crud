@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('top');
 });
 
+Route::get('/hoge', function () {
+    return phpinfo();
+});
+
 Route::resource('users', 'UserController');
 
 Route::resource('posts', 'PostController');
